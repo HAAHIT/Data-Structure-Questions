@@ -9,9 +9,25 @@ vector<int> optimal_sequence(int n) {
   while (n >= 1) {
     sequence.push_back(n);
     if (n % 3 == 0) {
-      n /= 3;
+      if (((n-1) % 2 == 0) && (((n-1)/2)%2 == 0) && ((n/3)%3 !=0) )
+      {
+        n = n-1;
+      }
+      else
+      {
+        n /= 3;
+      }
+      
+      
     } else if (n % 2 == 0) {
-      n /= 2;
+      if (((n-1) % 3 == 0) && (((n-1)/3)%3 ==0))
+      {
+        n = n-1;
+      }
+      else
+      {
+        n /= 2;
+      }
     } else {
       n = n - 1;
     }

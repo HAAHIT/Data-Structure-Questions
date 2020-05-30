@@ -44,8 +44,8 @@ ll get_majority_element(vector<int> &a, ll left, ll right) {
   {
     if (a[i] == a[i+1])
     {
-      //std::cout<<a[i]<<" "<<a[i+1]<<" ";
-      //std::cout<<std::endl;
+    //   std::cout<<a[i]<<" "<<a[i+1]<<" ";
+    //   std::cout<<std::endl;
       Hlap++;
       if (Hlap > ((right-left)/2))
       {
@@ -55,7 +55,7 @@ ll get_majority_element(vector<int> &a, ll left, ll right) {
     }
     else
     {
-      Hlap=0;
+      Hlap=1;
     }
   }
     return 0;
@@ -63,32 +63,37 @@ ll get_majority_element(vector<int> &a, ll left, ll right) {
 
 int main() 
 {
-  while (true)
-  {
-    cout<<endl;
-    int n = rand()%10 +2;
-    cout<<n<<" ";
-    vector<int> a;
-    for (size_t i = 0; i < n; i++)
-    {
-      a.push_back(rand() % 100);
-    }
-    //replace with the call to binary_search when implemented
-    ll res1 = get_majority_element(a, 0, a.size() );
-    ll res2 = get_majority_element_naive(a, 0, a.size() );
-    if (res1 != res2)
-    {
-      cout<<endl<<"Wrong Answer: "<<res1<<" "<<res2;
-      break;
-    }
-    else
-    {
-      cout<<endl<<"OK";
-    }
+//   while (true)
+//   {
+//     cout<<endl;
+//     int n = rand()%10 +2;
+//     cout<<n<<" ";
+//     vector<int> a;
+//     for (size_t i = 0; i < n; i++)
+//     {
+//       a.push_back(rand() % 100);
+//     }
+//     for (size_t i = 0; i < n; i++)
+//     {
+//         cout<<a[i]<<" ";
+//     }
     
-    }
+//     //replace with the call to binary_search when implemented
+//     ll res1 = get_majority_element(a, 0, a.size() );
+//     ll res2 = get_majority_element_naive(a, 0, a.size() );
+//     if (res1 != res2)
+//     {
+//       cout<<endl<<"Wrong Answer: "<<res1<<" "<<res2;
+//       break;
+//     }
+//     else
+//     {
+//       cout<<endl<<"OK";
+//     }
+    
+//     } 
   
-  }
+  
 
   ll hit=0;
   cin>>hit;
@@ -96,7 +101,7 @@ int main()
   for(size_t i = 0; i < a.size(); ++i) {
       cin >> a[i];
   }
-  if (n==1)
+  if (a.size()==1)
   {
     cout<<1;
   }
@@ -104,5 +109,5 @@ int main()
   {
     cout << get_majority_element(a, 0, a.size())<< '\n';
   }
-  
-}
+}  
+
